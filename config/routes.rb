@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users,
+    controllers: { registrations: 'registrations' }
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
@@ -16,4 +17,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root "pages#home"
+  resources :users, only: [:show]
 end
