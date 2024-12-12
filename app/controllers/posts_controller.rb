@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  
+
+  def index
+    @posts = Post.limit(10).includes(:photos, :user).order("created_at DESC") #includesでN＋１問題を解決　#limitで１０個まで取得　#orderで並び替え
+  end
+
   def new
     @post = Post.new
     @post.photos.build
