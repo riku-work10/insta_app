@@ -1,0 +1,23 @@
+[33mcommit 0b7cf22995c89ff9001daea74386ed5b0a19166a[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: riku-work10 <ukir19990530@gmail.com>
+Date:   Thu Dec 12 16:11:50 2024 +0900
+
+    deviseのviewとモデルの導入、navbarログインしている人のみ実装
+
+[33mcommit 5922938486b0a4d0c28a33453d3202b0b124e822[m
+Author: riku-work10 <ukir19990530@gmail.com>
+Date:   Thu Dec 12 16:01:38 2024 +0900
+
+    devise導入、フラッシュメッセージの設定
+
+[33mcommit ea28f9d19c2725a104bc64d1b97260e333344341[m
+Author: riku-work10 <ukir19990530@gmail.com>
+Date:   Thu Dec 12 15:38:37 2024 +0900
+
+    トップページの作成
+
+[33mcommit f55f5d9133a60bf0b1ee72baecb0960c7c1494ce[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: riku-work10 <ukir19990530@gmail.com>
+Date:   Thu Dec 12 14:28:34 2024 +0900
+
+    set up
