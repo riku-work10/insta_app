@@ -21,17 +21,19 @@
 
     <%= render "partial/navbar" if current_user %>
 
-    <% if flash[:notice] %>
-      <div class="alert alert-info">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
-    <% if flash[:alert] %>
-      <div class="alert alert-info">
-        <%= flash[:alert] %>
-      </div>
-    <% end %>
-
-    <%= yield %>
+    <div id="wrapper">
+      <% if flash[:notice] %>
+        <div class="alert alert-info">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="alert alert-info">
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+      <%= yield %>
+      <%= render "partial/footer" %>
+    </div>
   </body>
 </html>
