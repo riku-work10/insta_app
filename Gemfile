@@ -39,6 +39,9 @@ gem "bootsnap", require: false
 #追加したgemたち
 
 gem 'devise'
+gem 'carrierwave'
+gem "mini_magick"
+
 
 
 group :development, :test do
