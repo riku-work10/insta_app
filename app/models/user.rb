@@ -20,4 +20,17 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :likes
+  has_many :like_posts, through: :likes, source: :post
+
+  def like(post)
+    like_posts << post
+  end
+
+  def unlike(post)
+    like_posts.destroy(post)
+  end
+
+  def like?(post)  #条件分岐で使うかも
+    like_posts.include?(post) #include？はexistsに置き換えても問題はない！
+  end
 end
