@@ -1,0 +1,7 @@
+<div id="like-icon-post-<%= post.id %>">
+  <% if current_user.like?(post) %>
+    <%= render 'unlike', { post: post, like: like } %>
+  <% else %>
+    <%= render 'like', { post: post ,like: like } %>
+  <% end %>
+</div>
