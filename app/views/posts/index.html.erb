@@ -27,25 +27,22 @@
         <div class="card-body">
           <div class="row parts">
 
-            <%# ==========ここから編集する========== ここでいいねのハートのオンオフを表示している%>
-            <div id="like-icon-post-<%= post.id.to_s %>">
-              <% if like = current_user.likes.find_by(post_id: post.id) %>
+            <div id="like-icon-post-<%= post.id %>">
+              <% if current_user.like?(post) %>
+                <% like = current_user.likes.find_by(post_id: post.id) %>
                 <%= link_to "いいねを取り消す", post_like_path(post.id, like.id), class: "loved hide-text", data: { turbo_method: :delete } %>
               <% else %>
                 <%= link_to "いいね", post_likes_path(post_id: post.id), class: "love hide-text", data: { turbo_method: :post } %>
               <% end %>
             </div>
-            <%# ==========ここまで編集する========== %>
+
 
             <%= link_to "", "#", class: "comment" %>
           </div>
-
-          <%# ==========ここから編集する========== ここでいいねの数が何個あるかを表示している%>
-          #
+          
           <div id="like-text-post-<%= post.id.to_s %>">
             <%= render "like_text", { likes: post.likes } %>
           </div>
-          <%# ==========ここまで編集する========== %>
 
           <div>
             <span><strong><%= post.user.name %></strong></span>

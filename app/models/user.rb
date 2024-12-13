@@ -30,7 +30,7 @@ class User < ApplicationRecord
     like_posts.destroy(post)
   end
 
-  def like?(post)  #条件分岐で使うかも
-    like_posts.include?(post) #include？はexistsに置き換えても問題はない！
+  def like?(post)
+    likes.exists?(post_id: post.id)
   end
 end
