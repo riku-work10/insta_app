@@ -49,13 +49,21 @@
             <span><%= post.caption %></span>
             <%= link_to time_ago_in_words(post.created_at).upcase + "前", post_path(post), class: "post-time no-text-decoration" %>
             <hr>
-            <div class="row parts">
-              <form action="#" class="w-100">
-                <div>
-                  <textarea class="form-control comment-input border-0" placeholder="コメント..." rows="1"></textarea>
-                </div>
-              </form>
+            <%# ==========ここから編集する========== %>
+            <div id="comment-post-<%= post.id.to_s %>">
+              <%= render 'comment_list', { post: post } %>
             </div>
+            <%= link_to time_ago_in_words(post.created_at).upcase + "前", post_path(post),
+              class: "light-color post-time no-text-decoration" %>
+            <hr>
+            <div class="row actions" id="comment-form-post-<%= post.id.to_s %>">
+              <%= form_with model: [post, Comment.new], class: "w-100" do |f| %>
+                <%= f.hidden_field :user_id, value: current_user.id %>
+                <%= f.hidden_field :post_id, value: post.id %>
+                <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "コメント ...", autocomplete: :off %>
+              <% end %>
+            </div>
+            <%# ==========ここまで編集する========== %>
           </div>
         </div>
       </div>
